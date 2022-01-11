@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  myvalue: ---Namespace= {{ .Release.Namespace }}   Version= {{ .Release.Revision }}  Service= {{ .Release.Service }} ---
+  anotherValue: "yes, thats it"
+  favoriteDrink: {{ .Values.favoriteDrink }}
